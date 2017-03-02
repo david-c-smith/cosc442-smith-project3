@@ -12,7 +12,7 @@ package edu.towson.cis.cosc442.project3.vendingmachine;
  */
 public class VendingMachine {
 
-	// The number of slots in the vending machine
+	// The number of slots in the vending machine.
 	public static final int NUM_SLOTS = 4;
 
 	// The code for the "A" slot
