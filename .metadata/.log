@@ -1,0 +1,13 @@
+!SESSION 2017-03-03 14:56:29.270 -----------------------------------------------
+eclipse.buildId=4.6.2.M20161124-1400
+java.version=1.8.0_31
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/Dave/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/Dave/.eclipse_keyring
+
+!ENTRY com.instantiations.eclipse 1 0 2017-03-03 14:56:58.840
+!MESSAGE StartupPlugin: could not add workbench property change listener (1) ... compatibility layer might not be installed.
+
+!ENTRY com.instantiations.eclipse 1 0 2017-03-03 14:57:05.880
+!MESSAGE StartupPlugin: could not remove workbench property change listener (1) ... workbench might already be shut down.
