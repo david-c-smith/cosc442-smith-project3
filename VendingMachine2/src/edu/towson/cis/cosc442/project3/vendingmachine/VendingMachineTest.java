@@ -10,6 +10,8 @@ public class VendingMachineTest {
 
 	VendingMachine vendingMachine;
 	VendingMachineItem item;
+	public static String INVALID_CODE_MESSAGE = "Invalid code for vending machine item";
+
 	
 	@Before
 	public void setUp() throws Exception {
@@ -29,6 +31,42 @@ public class VendingMachineTest {
 	public void addItemTest() {	
 		vendingMachine.addItem(item, VendingMachine.A_CODE);
 		assertEquals(item, vendingMachine.getItem(VendingMachine.A_CODE));
+	}
+	
+	
+	/**
+	 * Tests getSlotIndex for each String code
+	 */
+	@Test
+	public void getSlotIndexTest() {
+		assertEquals(0,vendingMachine.getSlotIndex(VendingMachine.A_CODE));
+		assertEquals(1,vendingMachine.getSlotIndex(VendingMachine.B_CODE));
+		assertEquals(2,vendingMachine.getSlotIndex(VendingMachine.C_CODE));
+		assertEquals(3,vendingMachine.getSlotIndex(VendingMachine.D_CODE));
+	}
+	
+	/**
+	 * Checks for invalid slotIndex code
+	 */
+	@Test (expected = VendingMachineException.class)
+	public void getSlotIndexException() {
+		vendingMachine.getSlotIndex("hi");
+	}
+	
+	/**
+	 * Checks if 2 of the same item is added
+	 */
+	@Test 
+	public void duplicateItemTest() {
+		vendingMachine.addItem(item, VendingMachine.C_CODE);
+		vendingMachine.addItem(item, VendingMachine.C_CODE);
+	}
+	
+	@Test 
+	public void doesNotExistRemovalTest() {
+		vendingMachine.removeItem(VendingMachine.C_CODE);
+		vendingMachine.removeItem(VendingMachine.C_CODE);
+
 	}
 	
 	/**

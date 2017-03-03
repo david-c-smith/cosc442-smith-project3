@@ -32,7 +32,6 @@ public class VendingMachineItemTest {
 	public void tearDown() throws Exception {
 		System.gc();
 	}
-
 	
 	/**
 	 * Testing the constructor for name and price values 
@@ -47,8 +46,10 @@ public class VendingMachineItemTest {
 	 * Testing the exception for a price < 0 in the constructor
 	 */
 	@Test (expected = VendingMachineException.class)
-	public void VendingMachineItemLessThanZeroTest () {
-		item = new VendingMachineItem("Test item", -5);
+	public void VendingMachineItemLessThanOrEqualToZeroTest () {
+		item = new VendingMachineItem("Test item", 0);
+		item = new VendingMachineItem("Test item", -3);
+
 	}
 	
 	/**
